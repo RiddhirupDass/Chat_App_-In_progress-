@@ -6,7 +6,7 @@ This project was built **solo from scratch** and now represents a fully function
 
 ---
 
-## ** Key Features**
+## **Key Features**
 
 ### **User Authentication**
 
