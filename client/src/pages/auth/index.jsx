@@ -84,39 +84,51 @@ function Auth() {
         }
     }
 
-  return (
-    <div className="h-[100vh] w-[100vw] flex items-center justify-center">
-        <div className="h-[80vh] w-[80vw] grid bg-white border-2 border-white rounded-3xl shadow-xl md:w-[90vw] lg:w-[70vw] xl:w-[60vw] xl:grid-cols-2">
-            <div className="flex flex-col gap-10 items-center justify-center">
-                <div className="flex items-center justify-center">
-                    <h1 className="font-bold text-5xl md:text-6xl">Welcome</h1>
-                </div>
-                <div className="flex items-center justify-center w-full p-5">
-                <Tabs defaultValue="account" className="w-[400px]">
-                    <TabsList className="bg-transparent w-full">
-                        <TabsTrigger className="w-full border-b-2 data-[state=active]:border-indigo-800" value="login">Login</TabsTrigger>
-                        <TabsTrigger className="w-full border-b-2 data-[state=active]:border-indigo-800" value="signup">Signup</TabsTrigger>
-                    </TabsList>
-                    <TabsContent className="w-full flex flex-col gap-5 mt-10" value="login">
-                        <Input placeholder="Email" type="email" value={email} onChange={(event)=>{setEmail(event.target.value)}}/>
-                        <Input placeholder="Password" type="password" value={password} onChange={(event)=>{setPassword(event.target.value)}}/>
-                        <Button className="rounded-full" onClick={handleLogin}>Login</Button>
-                    </TabsContent>
-                    <TabsContent className="w-full flex flex-col gap-5" value="signup">
-                        <Input placeholder="Email" type="email" value={email} onChange={(event)=>{setEmail(event.target.value)}}/>
-                        <Input placeholder="Password" type="password" value={password} onChange={(event)=>{setPassword(event.target.value)}}/>
-                        <Input placeholder="Confirm Password" type="password" value={confirmpassword} onChange={(event)=>{setConfirmpassword(event.target.value)}}/>
-                        <Button className="rounded-full" onClick={handleSignup}>Signup</Button>
-                    </TabsContent>
-                </Tabs>
-                </div>
-            </div>
-            <div className="hidden xl:flex justify-center items-center">
-                <img src={Background} alt="background image"  />
-            </div>
+
+    return (
+  <div className="h-[100vh] w-[100vw] flex items-center justify-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:200%_200%] bg-left animate-gradient-x">
+    <div className="h-[80vh] w-[80vw] grid bg-[#1e1b2e]/80 border border-white/20 rounded-3xl shadow-2xl md:w-[90vw] lg:w-[70vw] xl:w-[60vw] xl:grid-cols-2 z-10">
+      <div className="flex flex-col gap-10 items-center justify-center">
+        <div className="flex items-center justify-center">
+          <h1 className="font-bold text-5xl md:text-6xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x">Welcome</h1>
         </div>
+        <div>
+        </div>
+        <div className="flex items-center justify-center w-full p-5">
+          <Tabs defaultValue="account" className="w-[400px]">
+            <TabsList className="bg-transparent w-full">
+              <TabsTrigger className="w-full border-b-2 data-[state=active]:border-indigo-800" value="login">
+                Login
+              </TabsTrigger>
+              <TabsTrigger className="w-full border-b-2 data-[state=active]:border-indigo-800" value="signup">
+                Signup
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent className="w-full flex flex-col gap-5 mt-10" value="login">
+              <Input placeholder="Email" className="bg-[#2a2438] text-white placeholder-gray-400" type="email" value={email} onChange={(event) => setEmail(event.target.value)} />
+              <Input placeholder="Password" className="bg-[#2a2438] text-white placeholder-gray-400" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <Button className="rounded-full" onClick={handleLogin}>
+                Login
+              </Button>
+            </TabsContent>
+            <TabsContent className="w-full flex flex-col gap-5" value="signup">
+              <Input placeholder="Email" className="bg-[#2a2438] text-white placeholder-gray-400" type="email"  value={email} onChange={(event) => setEmail(event.target.value)} />
+              <Input placeholder="Password" className="bg-[#2a2438] text-white placeholder-gray-400" type="password" value={password} onChange={(event) => setPassword(event.target.value)} />
+              <Input placeholder="Confirm Password" className="bg-[#2a2438] text-white placeholder-gray-400" type="password" value={confirmpassword} onChange={(event) => setConfirmpassword(event.target.value)} />
+              <Button className="rounded-full" onClick={handleSignup}>
+                Signup
+              </Button>
+            </TabsContent>
+          </Tabs>
+        </div>
+      </div>
+      <div className="hidden xl:flex justify-center items-center">
+        <img src={Background} alt="background image" />
+      </div>
     </div>
-  )
+  </div>
+ );
+
 }
 
 export default Auth
